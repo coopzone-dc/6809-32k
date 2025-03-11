@@ -2,7 +2,8 @@ This Monitor program is from Jeff Trantor, the original can be found here, I inc
 
 https://github.com/jefftranter/6809/tree/master
 
-Firmware that combines both Microsoft BASIC and the ASSIST09 monitor into one ROM.
+Firmware that combines both Microsoft BASIC and the ASSIST09 monitor into one ROM. The 16k Rom image is the BIN file. It forms parts of the main ROM in the top level folder.
+
 It also includes Jeff Trantors disassembler which adds a new monitor U command and trace function which adds a new monitor T command.
 
 It comes up in ASSIST09. You can start BASIC by running "G C000".

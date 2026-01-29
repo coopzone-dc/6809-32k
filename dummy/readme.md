@@ -19,19 +19,19 @@ RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
 
 Copyright 1987 MISOSYS, Inc., All rights reserved
 
-Enter drive address <1-2 and F/R ↑1;F← ----------- 1F
+Enter drive address <1-2 and F/R ↑1;F← ----------- **1F**
 
 Enter the STEP RATE <10us-7.5ms ↑10← -------------
 
-Enter the physical TRACKS per surface ↑306← -------153
+Enter the physical TRACKS per surface ↑306← -------**153**
 
-Enter the total number of HEADS ↑4← --------------- 8
+Enter the total number of HEADS ↑4← --------------- **8**
 
 Heads already in use <.-.-.-.-.-.-.-.
 
-Enter partition's number of heads <1-8 ----------- 8
+Enter partition's number of heads <1-8 ----------- **8**
 
-Enter partition's number of cylinders ↑153← ------- 38
+Enter partition's number of cylinders ↑153← ------- **38**
 
 **SYSTEM (DRIVE=5,DISABLE,DRIVER="RSHARD5")**
 
@@ -39,9 +39,9 @@ RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
 
 Copyright 1987 MISOSYS, Inc., All rights reserved
 
-Enter partition's number of heads <1-6 ----------- 8
+Enter partition's number of heads <1-6 ----------- **8**
 
-Enter partition's number of cylinders ↑115← ------- 38
+Enter partition's number of cylinders ↑115← ------- **38**
 
 **SYSTEM (DRIVE=6,DISABLE,DRIVER="RSHARD5")**
 
@@ -49,13 +49,13 @@ RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
 
 Copyright 1987 MISOSYS, Inc., All rights reserved
 
-Enter drive address <1-2 and F/R ↑1;F← ----------- 1F
+Enter drive address <1-2 and F/R ↑1;F← ----------- **1F**
 
 Heads already in use <.-.-.-.-.-.-.-.
 
-Enter partition's number of heads <1-8 ----------- 8
+Enter partition's number of heads <1-8 ----------- **8**
 
-Enter partition's number of cylinders ↑77← ------- 38
+Enter partition's number of cylinders ↑77← ------- **38**
 
 **SYSTEM (DRIVE=7,DISABLE,DRIVER="RSHARD5")**
 
@@ -63,13 +63,13 @@ RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
 
 Copyright 1987 MISOSYS, Inc., All rights reserved
 
-Enter drive address <1-2 and F/R ↑1;F← ----------- 1F
+Enter drive address <1-2 and F/R ↑1;F← ----------- **1F**
 
 Heads already in use <.-.-.-.-.-.-.-.
 
-Enter partition's number of heads <1-8 ----------- 8
+Enter partition's number of heads <1-8 ----------- **8**
 
-Enter partition's number of cylinders ↑39← ------- 38
+Enter partition's number of cylinders ↑39← ------- **38**
 
 Don’t be tempted to use 39, it all goes wrong if you do.
 
@@ -119,13 +119,9 @@ Just unzip the ldosboothd.zip file to your SD Card change the boot.cfg file to u
 The zip file contains
 
 ldosboot2s.dmk This is a double-sided single density floppy disk to boot the
-
-               system from. It also contains the RSHARD drivers v5 and v1.
-               
+               system from. It also contains the RSHARD drivers v5 and v1.               
 ldosboothd.hdv The hard disk image file, aprox 10meg, giving 4 2.5meg
-
-               partitions.
-               
+               partitions.              
 ldosboothd.ini The ini file for floppy-80 M1 it set's up two devices:
 
 Your can test the setup with a few commands such as FREE or DEVICES, like this:

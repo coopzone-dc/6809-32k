@@ -19,11 +19,17 @@ Start in the emulator with a new hard disk image, boot up ldos531 Or if you can 
 Copyright 1987 MISOSYS, Inc., All rights reserved
 >
 >Enter drive address <1-2> and F/R ↑1;F← -----------> 1F
+>
 >Enter the STEP RATE <10us-7.5ms> ↑10← ------------->
+>
 >Enter the physical TRACKS per surface ↑306← ------->153
+>
 >Enter the total number of HEADS ↑4← ---------------> 8
+>
 >Heads already in use <.-.-.-.-.-.-.-.>
+>
 >Enter partition's number of heads <1-8> -----------> 8
+>
 >Enter partition's number of cylinders ↑153← -------> 38
 >
 >SYSTEM (DRIVE=5,DISABLE,DRIVER="RSHARD5")

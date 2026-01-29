@@ -13,74 +13,89 @@ There aren't many ways to create a hard disk hdd image. In fact the only real wa
 
 Start in the emulator with a new hard disk image, boot up ldos531 Or if you can (make sure you have the drivers on the boot disk). You can also start it from the command trs80gp -m1 -d0 ldosboot2s.dmk.  Once the emulator has booted add an unformatted hdd image to hddrive 0 in the hardisk menu option. Then in LDOS run:
 
->SYSTEM (DRIVE=4,DISABLE,DRIVER="RSHARD5")
+SYSTEM (DRIVE=4,DISABLE,DRIVER="RSHARD5")
 
->RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
+RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
+
 Copyright 1987 MISOSYS, Inc., All rights reserved
->
->Enter drive address <1-2> and F/R ↑1;F← -----------> 1F
->
->Enter the STEP RATE <10us-7.5ms> ↑10← ------------->
->
->Enter the physical TRACKS per surface ↑306← ------->153
->
->Enter the total number of HEADS ↑4← ---------------> 8
->
->Heads already in use <.-.-.-.-.-.-.-.>
->
->Enter partition's number of heads <1-8> -----------> 8
->
->Enter partition's number of cylinders ↑153← -------> 38
->
->SYSTEM (DRIVE=5,DISABLE,DRIVER="RSHARD5")
->
->RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
->Copyright 1987 MISOSYS, Inc., All rights reserved
->
->Enter partition's number of heads <1-6> -----------> 8
->Enter partition's number of cylinders ↑115← -------> 38
->
->SYSTEM (DRIVE=6,DISABLE,DRIVER="RSHARD5")
->
->RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
->Copyright 1987 MISOSYS, Inc., All rights reserved
->
->Enter drive address <1-2> and F/R ↑1;F← -----------> 1F
->Heads already in use <.-.-.-.-.-.-.-.>
->Enter partition's number of heads <1-8> -----------> 8
->Enter partition's number of cylinders ↑77← -------> 38
->
->SYSTEM (DRIVE=7,DISABLE,DRIVER="RSHARD5")
->
->RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
->Copyright 1987 MISOSYS, Inc., All rights reserved
->
->Enter drive address <1-2> and F/R ↑1;F← -----------> 1F
->Heads already in use <.-.-.-.-.-.-.-.>
->Enter partition's number of heads <1-8> -----------> 8
->Enter partition's number of cylinders ↑39← -------> 38
->
->Don’t be tempted to use 39, it all goes wrong if you do.
->
->RSFORM5 :4
->
->RS FORM - WD1000/WD1010 Formatter - Version 1.0a
->Copyright 1987 MISOSYS, Inc., All Rights reserved
->
->Disk Pack name ? HD04
->Master password ? PASSWORD
->Disk contains data -- Unreadable directory
->Are you sure you want to format it <Y,N>? Y
->Lock out track manually <Y/N> ? N
->Verifying  cylinder 037
->Directory will be placed on cylinder 019
->
->Initializing SYSTEM information ....++......
->Formatting complete
+
+Enter drive address <1-2 and F/R ↑1;F← ----------- 1F
+
+Enter the STEP RATE <10us-7.5ms ↑10← -------------
+
+Enter the physical TRACKS per surface ↑306← -------153
+
+Enter the total number of HEADS ↑4← --------------- 8
+
+Heads already in use <.-.-.-.-.-.-.-.
+
+Enter partition's number of heads <1-8 ----------- 8
+
+Enter partition's number of cylinders ↑153← ------- 38
+
+SYSTEM (DRIVE=5,DISABLE,DRIVER="RSHARD5")
+
+RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
+
+Copyright 1987 MISOSYS, Inc., All rights reserved
+
+Enter partition's number of heads <1-6 ----------- 8
+
+Enter partition's number of cylinders ↑115← ------- 38
+
+SYSTEM (DRIVE=6,DISABLE,DRIVER="RSHARD5")
+
+RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
+
+Copyright 1987 MISOSYS, Inc., All rights reserved
+
+Enter drive address <1-2 and F/R ↑1;F← ----------- 1F
+Heads already in use <.-.-.-.-.-.-.-.
+Enter partition's number of heads <1-8 ----------- 8
+Enter partition's number of cylinders ↑77← ------- 38
+
+SYSTEM (DRIVE=7,DISABLE,DRIVER="RSHARD5")
+
+RS Hard Disk WD1000/WD1010 Driver - Version 1.0a
+
+Copyright 1987 MISOSYS, Inc., All rights reserved
+
+Enter drive address <1-2 and F/R ↑1;F← ----------- 1F
+
+Heads already in use <.-.-.-.-.-.-.-.
+
+Enter partition's number of heads <1-8 ----------- 8
+
+Enter partition's number of cylinders ↑39← ------- 38
+
+Don’t be tempted to use 39, it all goes wrong if you do.
+
+RSFORM5 :4
+
+RS FORM - WD1000/WD1010 Formatter - Version 1.0a
+
+Copyright 1987 MISOSYS, Inc., All Rights reserved
+
+Disk Pack name ? HD04
+
+Master password ? PASSWORD
+
+Disk contains data -- Unreadable directory
+
+Are you sure you want to format it <Y,N? Y
+
+Lock out track manually <Y/N ? N
+
+Verifying  cylinder 037
+
+Directory will be placed on cylinder 019
+
+Initializing SYSTEM information ....++......
+Formatting complete
 
 Repeat the format for partitions 5,6,7 (adjust Disk Pack Name)
 
->SYSTEM (SYSGEN)
+SYSTEM (SYSGEN)
 
 Done, your hard disk is ready to try in the floppy-80 M1. You may have noticed above I seem to have suggested strange sizes for the hard disk, I did this because the more normal, and original HD setup tracks=309, heads=4 etc always fail to work. I don't now if it's a bug in LDOS, RSHARD or perhaps the emulator... But if you try the default any partition created seems to only have 35 tracks when you come to format it. Even with the settings above the last portion could be 39 cylinders but it will fail to format more than 35 if you try it.
 
@@ -98,39 +113,61 @@ If you don't want to create a setup manually as above. You can
 Just unzip the ldosboothd.zip file to your SD Card change the boot.cfg file to use the ldosboothd.ini file and check HDV is enabled it system.cfg
 
 The zip file contains
->ldosboot2s.dmk This is a double-sided single density floppy disk to boot the
->               system from. It also contains the RSHARD drivers v5 and v1.
->ldosboothd.hdv The hard disk image file, aprox 10meg, giving 4 2.5meg
->               partitions.
->ldosboothd.ini The ini file for floppy-80 M1 it set's up two devices:
+ldosboot2s.dmk This is a double-sided single density floppy disk to boot the
+               system from. It also contains the RSHARD drivers v5 and v1.
+ldosboothd.hdv The hard disk image file, aprox 10meg, giving 4 2.5meg
+               partitions.
+ldosboothd.ini The ini file for floppy-80 M1 it set's up two devices:
 
 Your can test the setup with a few commands such as FREE or DEVICES, like this:
                                                                
->LDOS Ready                                                      
->FREE                                                            
->Drive :0 BOOT2S   00/00/00  80S2 Free=  192.5/  400.0 Fi= 80/144
->Drive :4 HD04     01/28/26  38H8 Free= 2296.0/ 2432.0 Fi=254/256
->Drive :5 HD05     01/28/26  38H8 Free= 2360.0/ 2432.0 Fi=254/256
->Drive :6 HD06     01/28/26  38H8 Free= 2360.0/ 2432.0 Fi=254/256
->Drive :7 HD07     01/28/26  38H8 Free= 2360.0/ 2432.0 Fi=254/256
->                                                                
->LDOS Ready                                                      
->DEVICES                                                               
->:0   ↑BOOT2S  ← 5" Floppy #1 Cyl= 80 Sden Side=2 Step= 6 Dly= 1 
->:1   ↑No  Disk← 5" Floppy #2 Cyl= 35 Sden Side=1 Step=40 Dly= 1 
->:2   ↑No  Disk← 5" Floppy #4 Cyl= 35 Sden Side=1 Step=40 Dly= 1 
->:3   ↑No  Disk← 5" Floppy #8 Cyl= 35 Sden Side=1 Step=40 Dly= 1 
->:4   ↑HD04    ← 5" Rigid  #0 Cyl= 38 Fixed                      
->:5   ↑HD05    ← 5" Rigid  #0 Cyl= 38 Fixed                      
->:6   ↑HD06    ← 5" Rigid  #0 Cyl= 38 Fixed                      
->:7   ↑HD07    ← 5" Rigid  #0 Cyl= 38 Fixed                      
->*KI <=  X'03E3'                                                 
->*DO <=> X'4378'                                                 
->*PR  => X'058D'                                                 
->*JL  =  Nil                                                     
->*SI  =  Nil                                                     
->*SO  =  Nil                                                     
->Options: Slow
+LDOS Ready
+
+FREE
+
+Drive :0 BOOT2S   00/00/00  80S2 Free=  192.5/  400.0 Fi= 80/144
+
+Drive :4 HD04     01/28/26  38H8 Free= 2296.0/ 2432.0 Fi=254/256
+
+Drive :5 HD05     01/28/26  38H8 Free= 2360.0/ 2432.0 Fi=254/256
+
+Drive :6 HD06     01/28/26  38H8 Free= 2360.0/ 2432.0 Fi=254/256
+
+Drive :7 HD07     01/28/26  38H8 Free= 2360.0/ 2432.0 Fi=254/256
+                                                                
+LDOS Ready
+
+DEVICES
+
+:0   ↑BOOT2S  ← 5" Floppy #1 Cyl= 80 Sden Side=2 Step= 6 Dly= 1
+
+:1   ↑No  Disk← 5" Floppy #2 Cyl= 35 Sden Side=1 Step=40 Dly= 1 
+
+:2   ↑No  Disk← 5" Floppy #4 Cyl= 35 Sden Side=1 Step=40 Dly= 1 
+
+:3   ↑No  Disk← 5" Floppy #8 Cyl= 35 Sden Side=1 Step=40 Dly= 1
+
+:4   ↑HD04    ← 5" Rigid  #0 Cyl= 38 Fixed
+
+:5   ↑HD05    ← 5" Rigid  #0 Cyl= 38 Fixed
+
+:6   ↑HD06    ← 5" Rigid  #0 Cyl= 38 Fixed 
+
+:7   ↑HD07    ← 5" Rigid  #0 Cyl= 38 Fixed
+
+*KI <=  X'03E3'
+
+*DO <= X'4378' 
+
+*PR  = X'058D'
+
+*JL  =  Nil 
+
+*SI  =  Nil 
+
+*SO  =  Nil 
+
+Options: Slow
 
 
 
